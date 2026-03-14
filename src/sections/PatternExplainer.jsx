@@ -1,37 +1,30 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, ScrollText, ArrowRight } from 'lucide-react';
 
-// --- Historically Accurate SVG Components ---
+// --- Historically Accurate Graphic Components ---
 
 const DongSonSun = () => (
   <motion.div
     initial={{ rotate: -90, opacity: 0, scale: 0.8 }}
     animate={{ rotate: 0, opacity: 1, scale: 1 }}
     transition={{ duration: 1.5, ease: "easeOut" }}
-    className="w-full h-full relative flex items-center justify-center p-2"
+    className="w-full h-full relative flex items-center justify-center transform group-hover:scale-110 transition-transform duration-1000"
   >
-    {/* Using the detailed, highly acclaimed authentic Dong Son drum graphic */}
-    <img 
-      src="https://upload.wikimedia.org/wikipedia/commons/2/22/Tr%E1%BB%91ng_%C4%91%E1%BB%93ng_%C4%90%C3%B4ng_S%C6%A1n.svg" 
+    <motion.img
+      src="/assets/dong_son_sun.png"
       alt="Mặt Trời Đông Sơn"
-      className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
-      style={{
-        // Filter crafted to convert black into the #D4AF37 gold tone matching the theme
-        filter: "invert(72%) sepia(35%) saturate(760%) hue-rotate(357deg) brightness(91%) contrast(85%)"
+      className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+      animate={{ 
+        scale: [1, 1.05, 1],
+        filter: ["brightness(1) contrast(1.1)", "brightness(1.3) contrast(1.2)", "brightness(1) contrast(1.1)"]
       }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
     />
-    
-    {/* Subtle spinning outer halo to match the description of "vận động vũ trụ" */}
     <motion.div
       animate={{ rotate: 360 }}
-      transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      className="absolute inset-0 rounded-full border-[1.5px] border-gold/30 border-dashed pointer-events-none z-0"
-    />
-    
-    <motion.div
-      animate={{ rotate: -360 }}
       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-      className="absolute inset-2 rounded-full border border-gold/10 pointer-events-none z-0"
+      className="absolute inset-x-0 inset-y-0 rounded-full border-[1.5px] border-gold/10 border-dashed pointer-events-none z-0 scale-150"
     />
   </motion.div>
 );
@@ -41,102 +34,74 @@ const ChimLac = () => (
     initial={{ x: -20, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
     transition={{ duration: 1.5, ease: "easeOut" }}
-    className="w-full h-full relative flex items-center justify-center"
+    className="w-full h-full relative flex items-center justify-center group-hover:translate-y-[-10px] transition-transform duration-1000"
   >
-    <motion.img 
-      src="https://upload.wikimedia.org/wikipedia/commons/a/a2/SCP_Wiki_Vietnamese_Logo.svg" 
+    <motion.img
+      src="/assets/chim_lac.png"
       alt="Chim Lạc"
-      animate={{ 
-        y: [0, -5, 0],
-        rotate: [0, 1, 0]
+      animate={{
+        y: [0, -15, 0],
+        rotate: [0, 3, 0],
+        filter: ["brightness(1) contrast(1.1)", "brightness(1.2) contrast(1.15)", "brightness(1) contrast(1.1)"]
       }}
-      transition={{ 
-        duration: 4, 
-        repeat: Infinity, 
-        ease: "easeInOut" 
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
       }}
-      className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"
-      style={{
-        // High-end filter to achieve the perfect #D4AF37 gold metallic look
-        filter: "invert(72%) sepia(35%) saturate(760%) hue-rotate(357deg) brightness(91%) contrast(85%)"
-      }}
+      className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
     />
-    
-    {/* Decorative motion trails to represent the "spirit of flight" */}
-    <div className="absolute inset-0 z-0">
-      {[...Array(3)].map((_, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, x: 0 }}
-          animate={{ opacity: [0, 0.2, 0], x: [-20, 60] }}
-          transition={{ 
-            duration: 3, 
-            delay: i * 1, 
-            repeat: Infinity, 
-            ease: "linear" 
-          }}
-          className="absolute h-px bg-gold/30"
-          style={{ top: `${30 + i * 20}%`, width: '40px' }}
-        />
-      ))}
-    </div>
   </motion.div>
 );
 
 const ImperialDragon = () => (
-  <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-current">
-    {/* S-shaped body (Ly Dynasty style) */}
-    <motion.path
-      d="M20 80 C20 90 40 95 50 80 C60 65 40 55 50 40 C60 25 80 30 80 20 C80 10 65 5 55 15 C45 25 55 35 50 50 C45 65 35 65 25 60 C15 55 10 40 20 30"
-      strokeWidth="2"
-      initial={{ pathLength: 0 }}
-      animate={{ pathLength: 1 }}
-      transition={{ duration: 2 }}
+  <motion.div
+    initial={{ scale: 0.8, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1.5, ease: "easeOut" }}
+    className="w-full h-full relative flex items-center justify-center group-hover:scale-105 transition-transform duration-1000"
+  >
+    <motion.img
+      src="/assets/ly_dragon.png"
+      alt="Rồng Thời Lý"
+      className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+      animate={{ 
+        x: [-5, 5, -5],
+        y: [-3, 3, -3],
+        filter: ["brightness(1) contrast(1.2)", "brightness(1.3) contrast(1.25)", "brightness(1) contrast(1.2)"]
+      }}
+      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
     />
-    {/* Head details */}
-    <motion.path
-      d="M80 20 L88 15 M80 20 L85 25"
-      strokeWidth="1.5"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.5 }}
-    />
-    {/* Spine/Scale details */}
-    {[...Array(10)].map((_, i) => (
-      <circle 
-        key={i} 
-        cx={25 + i * 5} 
-        cy={75 - (Math.sin(i * 0.8) * 20)} 
-        r="1" 
-        opacity="0.3" 
-      />
-    ))}
-    {/* Whiskers */}
-    <path d="M82 18 Q95 10 90 25" strokeWidth="0.8" opacity="0.5" />
-  </svg>
+  </motion.div>
 );
 
 const patterns = [
   {
     id: "sun",
     title: "Mặt Trời Đông Sơn",
-    desc: "Tâm điểm của mặt trống Đông Sơn, đại diện cho nguồn sống và trật tự vũ trụ. Các tia sáng rạng ngời tượng trưng cho uy quyền của các thủ lĩnh Lạc Việt thời cổ đại.",
-    detail: "Họa tiết này thường có 8, 10 hoặc 12 cánh, tương ứng với lịch pháp và các tiết khí trong năm của cư dân nông nghiệp lúa nước.",
-    component: <DongSonSun />
+    subtitle: "Nghi Lễ Thái Dương",
+    desc: "Tâm điểm của mặt trống Đông Sơn, đại diện cho nguồn sống và trật tự vũ trụ. Các tia sáng rạng ngời tượng trưng cho uy quyền tối cao.",
+    detail: "Họa tiết này thường có 8, 10 hoặc 12 cánh, tương ứng với lịch pháp và các tiết khí trong năm, là 'kim chỉ nam' cho nền nông nghiệp lúa nước cổ xưa.",
+    component: <DongSonSun />,
+    offset: ""
   },
   {
     id: "bird",
     title: "Chim Lạc",
-    desc: "Vật tổ của người Việt cổ, tượng trưng cho khát vọng vươn tới những tầm cao mới và tâm hồn bay bổng, tự do.",
-    detail: "Trên trống đồng, Chim Lạc thường được vẽ bay ngược chiều kim đồng hồ, thể hiện dòng chảy của thời gian và sự vận động bất tận của vũ trụ.",
-    component: <ChimLac />
+    subtitle: "Vũ Điệu Tự Do",
+    desc: "Vật tổ thiêng liêng, tượng trưng cho khát vọng chinh phục những tầm cao mới và tâm hồn bay bổng, thanh tao của người Việt.",
+    detail: "Trên trống đồng, Chim Lạc thường được vẽ bay ngược chiều kim đồng hồ, thể hiện niềm tin vào sự vận chuyển vĩnh hằng của vũ trụ và thời gian.",
+    component: <ChimLac />,
+    offset: ""
   },
   {
     id: "dragon",
     title: "Rồng Cung Đình",
-    desc: "Tượng trưng cho quyền uy tối thượng và bản sắc vương triều qua các thời kỳ Lý, Trần, Lê, Nguyễn.",
-    detail: "Rồng thời Nguyễn thường có 5 móng (dành cho vua) và mang vẻ oai nghiêm, lộng lẫy, kết hợp với các họa tiết mây lửa sinh động.",
-    component: <ImperialDragon />
+    subtitle: "Khí Phách Vương Triều",
+    desc: "Biểu tượng của quyền năng tối thượng, nét vẽ thanh thoát ẩn chứa sức mạnh nội sinh qua các triều đại Lý, Trần, Lê, Nguyễn.",
+    detail: "Rồng thời Nguyễn mang vẻ uy nghiêm tuyệt đối với 5 móng sắc sảo, uốn lượn giữa làn mây lửa, là hiện thân cho thiên tử và sự thịnh vượng.",
+    component: <ImperialDragon />,
+    offset: ""
   }
 ];
 
@@ -144,69 +109,106 @@ const PatternExplainer = () => {
   const [activeId, setActiveId] = useState(null);
 
   return (
-    <section className="py-32 px-8 bg-heritage-black relative border-y border-gold/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-20 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-gold text-sm tracking-[0.5em] uppercase mb-4 font-bold"
+    <section className="py-64 px-8 bg-transparent relative overflow-hidden" id="explainer">
+      {/* Artistic Atmosphere Backdrop */}
+      <div className="absolute inset-0 gold-dust opacity-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[150px] pointer-events-none animate-pulse-slow" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col items-center mb-40 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="flex items-center gap-4 mb-8"
           >
-            Ngôn ngữ Thị giác
-          </motion.h2>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
+            <div className="h-px w-10 bg-gold/30" />
+            <span className="text-gold text-[10px] tracking-[0.6em] font-black uppercase">Ngôn Ngữ Thị Giác</span>
+            <div className="h-px w-10 bg-gold/30" />
+          </motion.div>
+
+          <motion.h3
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-serif text-white italic"
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-7xl md:text-8xl font-serif text-white italic leading-none mb-12 tracking-tight"
           >
-            Giải mã những Sợi chỉ
+            Giải mã những <span className="text-gold">Sợi chỉ</span>
           </motion.h3>
+          
+          <div className="h-px w-24 bg-gold animate-glow-gold" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {patterns.map((p) => (
+        {/* Balanced Symmetrical Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 items-start">
+          {patterns.map((p, index) => (
             <motion.div
               key={p.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              viewport={{ once: true }}
               onClick={() => setActiveId(activeId === p.id ? null : p.id)}
-              whileHover={{ scale: 1.02 }}
-              className={`relative cursor-pointer bg-heritage-gray p-12 transition-all duration-500 border rounded-sm group overflow-hidden ${
-                activeId === p.id ? 'border-gold shadow-[0_0_40px_rgba(212,175,55,0.15)]' : 'border-white/5 hover:border-gold/30'
-              }`}
+              className={`relative group cursor-pointer ${p.offset}`}
             >
-              {/* Background Glow */}
-              <div className={`absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${activeId === p.id ? 'opacity-100' : ''}`} />
-
-              <div className="relative z-10">
-                <div className={`w-32 h-32 mb-10 text-gold transition-all duration-700 ${activeId === p.id ? 'opacity-100 scale-110' : 'opacity-40 group-hover:opacity-100 group-hover:scale-105'}`}>
-                  {p.component}
+              {/* Artistic Border Frame */}
+              <div className="absolute -inset-4 border border-gold/10 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-sm pointer-events-none" />
+              
+              <div className="relative">
+                {/* Main Visual Content */}
+                <div className={`aspect-[4/5] w-full mb-12 relative overflow-hidden bg-heritage-black/40 backdrop-blur-sm border border-white/5 transition-all duration-700 flex items-center justify-center p-12
+                  ${activeId === p.id ? 'border-gold/40 shadow-[0_0_50px_rgba(212,175,55,0.1)]' : 'hover:border-gold/20'}`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-1" />
+                  <div className="relative z-10 w-full h-full">
+                    {p.component}
+                  </div>
+                  
+                  {/* Subtle Texture Overlay */}
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]" />
                 </div>
-                
-                <h4 className="text-2xl font-serif text-white mb-6 uppercase tracking-widest group-hover:text-gold transition-colors">
-                  {p.title}
-                </h4>
-                <p className="text-white/60 leading-relaxed italic mb-8 group-hover:text-white/80 transition-colors">
-                  {p.desc}
-                </p>
-                
-                <AnimatePresence>
-                  {activeId === p.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="overflow-hidden bg-gold/5 p-6 border-l-2 border-gold mb-4"
-                    >
-                      <p className="text-gold text-sm font-medium leading-relaxed italic">
-                        {p.detail}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
 
-                <div className="mt-8 text-[10px] text-gold/30 uppercase tracking-[0.3em] font-bold group-hover:text-gold/60 transition-colors">
-                  {activeId === p.id ? "THU GỌN" : "NHẤN ĐỂ XEM CHI TIẾT"}
+                {/* Typography Information */}
+                <div className="relative pl-6">
+                  <motion.div 
+                    animate={{ x: activeId === p.id ? 10 : 0 }}
+                    className="flex flex-col gap-2"
+                  >
+                    <span className="text-gold/40 text-[9px] tracking-[0.4em] font-bold uppercase">{p.subtitle}</span>
+                    <h4 className="text-4xl font-serif text-white tracking-wide uppercase transition-colors group-hover:text-gold">
+                      {p.title}
+                    </h4>
+                    <div className="w-12 h-px bg-gold/20 mt-4 mb-4" />
+                    <p className="text-white/50 text-xl leading-relaxed font-light italic max-w-sm group-hover:text-white/80 transition-colors">
+                      "{p.desc}"
+                    </p>
+                  </motion.div>
+
+                  <AnimatePresence>
+                    {activeId === p.id && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                        animate={{ opacity: 1, height: 'auto', marginTop: 32 }}
+                        exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="p-8 border-l border-gold/40 bg-white/[0.02] backdrop-blur-md relative">
+                          <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <ScrollText size={60} className="text-gold" />
+                          </div>
+                          <p className="text-gold/80 text-lg leading-[1.8] font-light italic relative z-10">
+                            {p.detail}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="mt-12 flex items-center gap-4 group-hover:gap-8 transition-all duration-700">
+                    <span className="text-[10px] text-gold tracking-[0.5em] font-black uppercase">
+                      {activeId === p.id ? "Thu Gọn" : "Chi Tiết"}
+                    </span>
+                    <ArrowRight size={14} className={`text-gold transition-transform duration-500 ${activeId === p.id ? 'rotate-90' : ''}`} />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -214,9 +216,10 @@ const PatternExplainer = () => {
         </div>
       </div>
 
-      {/* Atmospheric elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gold/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-[100px] pointer-events-none" />
+      {/* Background Aesthetic Text */}
+      <div className="absolute bottom-10 left-0 w-full flex justify-center opacity-[0.02] pointer-events-none">
+        <span className="text-[20vw] font-serif italic text-white whitespace-nowrap leading-none">CRAFTED HISTORY</span>
+      </div>
     </section>
   );
 };

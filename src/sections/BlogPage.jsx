@@ -31,7 +31,8 @@ const articles = [
 
 const BlogPage = () => {
   return (
-    <section className="py-32 px-8 bg-heritage-black relative" id="blog-section">
+    <section className="py-32 px-8 bg-transparent relative overflow-hidden" id="blog-section">
+      <div className="absolute inset-0 radial-spotlight pointer-events-none opacity-40"></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <h2 className="text-gold text-sm tracking-[0.5em] uppercase mb-4 font-bold">Góc Học Thuật</h2>
@@ -40,7 +41,7 @@ const BlogPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {articles.map((article, idx) => (
-            <motion.article 
+            <motion.article
               key={article.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +53,7 @@ const BlogPage = () => {
                 <img src={article.image} alt={article.title} className="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute inset-0 bg-heritage-black/40"></div>
                 <div className="absolute top-6 left-6 px-4 py-2 bg-gold/10 border border-gold/30 text-gold text-[8px] uppercase font-bold tracking-widest">
-                   Văn hóa
+                  Văn hóa
                 </div>
               </div>
 
@@ -61,11 +62,11 @@ const BlogPage = () => {
                   <span className="flex items-center gap-2"><Calendar size={12} className="text-gold" /> {article.date}</span>
                   <span className="flex items-center gap-2"><User size={12} className="text-gold" /> {article.author}</span>
                 </div>
-                
+
                 <h4 className="text-2xl font-serif text-white group-hover:text-gold transition-colors leading-tight">
                   {article.title}
                 </h4>
-                
+
                 <p className="text-white/50 text-sm leading-relaxed italic line-clamp-3">
                   {article.excerpt}
                 </p>
@@ -79,9 +80,9 @@ const BlogPage = () => {
         </div>
 
         <div className="mt-24 text-center">
-           <button className="px-12 py-5 border border-white/10 text-white/50 hover:border-gold hover:text-gold transition-all uppercase tracking-[0.4em] text-[10px] font-bold">
-              Xem tất cả bài viết
-           </button>
+          <button className="px-12 py-5 border border-white/10 text-white/50 hover:border-gold hover:text-gold transition-all uppercase tracking-[0.4em] text-[10px] font-bold">
+            Xem tất cả bài viết
+          </button>
         </div>
       </div>
     </section>

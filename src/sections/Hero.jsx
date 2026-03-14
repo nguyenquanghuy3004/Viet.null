@@ -6,18 +6,21 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-cinematic-gradient">
+      {/* Background Image with Cinematic Effects */}
       <div 
-        className="absolute inset-0 z-0 scale-110 animate-pulse-slow"
+        className="absolute inset-0 z-0 scale-110 animate-pulse-slow opacity-60"
         style={{
           backgroundImage: 'url("/assets/hero.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-heritage-black/60 bg-noise"></div>
+        <div className="absolute inset-0 bg-noise opacity-30"></div>
+        <div className="absolute inset-0 bg-heritage-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-heritage-black via-transparent to-heritage-black"></div>
+        <div className="absolute inset-0 vignette-overlay opacity-90"></div>
+        <div className="gold-dust opacity-30 pointer-events-none"></div>
       </div>
 
       {/* Hero Content */}

@@ -27,8 +27,14 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="bg-heritage-black text-white selection:bg-gold selection:text-heritage-black scroll-smooth">
-        <Navbar onTryOnClick={() => setView('tryon')} onLogoClick={() => { setView('landing'); setActiveDynasty(null); }} />
+      <div className="min-h-screen bg-cinematic-gradient text-white selection:bg-gold selection:text-heritage-black scroll-smooth relative overflow-x-hidden">
+        {/* Global Atmospheric Layers (Moved to z-[-1] for absolute safety) */}
+        <div className="fixed inset-0 bg-noise pointer-events-none opacity-40 z-[-1]"></div>
+        <div className="fixed inset-0 vignette-overlay pointer-events-none z-[-1] opacity-70"></div>
+        <div className="fixed inset-0 gold-dust pointer-events-none z-[-1] opacity-20"></div>
+
+        <div className="relative z-10">
+          <Navbar onTryOnClick={() => setView('tryon')} onLogoClick={() => { setView('landing'); setActiveDynasty(null); }} />
         
         <AnimatePresence mode="wait">
           {view === 'tryon' ? (
@@ -42,7 +48,7 @@ function App() {
               <CulturalStory />
               <PatternExplainer />
               <CulturalMap />
-              <Quiz />
+              <Quiz onSelectDynasty={handleSelectDynasty} />
               <BlogPage />
               <About />
             </main>
@@ -57,8 +63,9 @@ function App() {
 
         <Footer />
       </div>
-    </LanguageProvider>
-  );
+    </div>
+  </LanguageProvider>
+);
 }
 
 export default App;

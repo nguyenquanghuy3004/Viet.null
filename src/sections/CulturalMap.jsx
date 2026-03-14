@@ -1,39 +1,22 @@
 import React, { useState } from 'react';
 import VietnamMap from '../components/VietnamMap';
 import RegionInfo from '../components/RegionInfo';
-
-const regions = [
-  { 
-    id: "north", 
-    name: "Miền Bắc", 
-    culture: "Cội nguồn văn hiến", 
-    details: "Cradle of the Red River civilization. Famous for Dong Son bronze culture, royal ceramics of Ly-Tran dynasties, and sophisticated silk from Van Phuc.",
-    patterns: ["Hoa văn Đông Sơn", "Họa tiết Ly - Trần", "Lụa Hà Đông"],
-  },
-  { 
-    id: "central", 
-    name: "Miền Trung", 
-    culture: "Tinh hoa cung đình", 
-    details: "Home to the Nguyen Dynasty's imperial capital, Hue. Known for Nhat Binh robes, dragon embroidery, and the refined aesthetics of the royal court.",
-    patterns: ["Rồng Cung Đình", "Họa tiết Nhật Bình", "Pháp lam Huế"],
-  },
-  { 
-    id: "south", 
-    name: "Miền Nam", 
-    culture: "Giao thoa & Phóng khoáng", 
-    details: "A land of harmony and openness. Inspired by the Mekong Delta's water motifs, Khmer ethnic patterns, and the modernization of traditional styles.",
-    patterns: ["Hoa văn sông nước", "Khăn rằn cách tân", "Gốm Lái Thiêu"],
-  }
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const CulturalMap = () => {
-  const [selectedId, setSelectedId] = useState(regions[0].id);
-  const selectedRegion = regions.find(r => r.id === selectedId);
+  const { t } = useLanguage();
+  
+  const regionIds = ["north", "central", "south"];
+  const [selectedId, setSelectedId] = useState(regionIds[0]);
+
+  const selectedRegion = t(`map.${selectedId}`);
 
   return (
-    <section className="py-40 px-8 bg-heritage-black relative border-y border-gold/10 overflow-hidden" id="cultural-map">
+    <section className="py-40 px-8 bg-transparent relative overflow-hidden" id="cultural-map">
+      <div className="absolute inset-0 radial-spotlight pointer-events-none"></div>
+      
       {/* 1. Topographic/Satellite HUD Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(212,175,55,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.2) 1px, transparent 1px)', backgroundSize: '100px 100px' }}></div>
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(212,175,55,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.1) 1px, transparent 1px)', backgroundSize: '100px 100px' }}></div>
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 via-transparent to-transparent pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto relative z-10 transition-all">

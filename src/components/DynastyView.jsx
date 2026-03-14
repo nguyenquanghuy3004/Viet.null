@@ -43,7 +43,7 @@ const DynastyView = ({ dynastyKey, onBack }) => {
             animate={{ scale: 1, opacity: 1 }}
             className="aspect-[4/5] relative overflow-hidden border border-gold/20"
           >
-             <img src="/assets/dynasties_collection.png" alt={data.name} className="w-full h-full object-cover grayscale opacity-60" />
+             <img src="/assets/dynasties_collection.png" alt={data.name} className="w-full h-full object-cover opacity-80" />
              <div className="absolute inset-0 bg-gradient-to-t from-heritage-black to-transparent"></div>
              <div className="absolute bottom-12 left-12 right-12">
                 <p className="text-gold text-[10px] uppercase tracking-[0.4em] mb-4">Biểu tượng chính</p>
@@ -78,8 +78,8 @@ const DynastyView = ({ dynastyKey, onBack }) => {
             {data.products.map(product => (
               <div key={product.id} className="group cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden bg-heritage-gray mb-6 relative border border-white/10 group-hover:border-gold/50 transition-all">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-heritage-black/20 group-hover:opacity-0 transition-opacity"></div>
+                  <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
+                  <div className="absolute inset-0 bg-heritage-black/10 group-hover:opacity-0 transition-opacity"></div>
                 </div>
                 <h4 className="text-xl font-serif text-white mb-2">{product.name}</h4>
                 <p className="text-gold font-bold">{product.price}</p>

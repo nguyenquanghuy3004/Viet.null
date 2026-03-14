@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-heritage-gray pt-20 pb-10 px-8 border-t border-gold/10">
+    <footer className="bg-transparent pt-20 pb-10 px-8 border-t border-gold/10 relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
         <div className="col-span-1 md:col-span-2">
           <h2 className="text-3xl font-serif text-gold tracking-widest uppercase mb-6">{t('nav.heritage')}</h2>

@@ -6,13 +6,13 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-32 bg-heritage-black relative" id="about">
+    <section className="py-32 bg-transparent relative overflow-hidden" id="about">
       <div className="max-w-4xl mx-auto px-8 text-center">
         <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           transition={{ duration: 1 }}
-           viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
           <img src="/assets/hero.png" alt="Brand Logo" className="w-24 h-24 mx-auto mb-12 rounded-full border-2 border-gold grayscale" />
           <h2 className="text-gold text-sm tracking-[0.4em] uppercase mb-8 font-bold">{t('about.subtitle')}</h2>

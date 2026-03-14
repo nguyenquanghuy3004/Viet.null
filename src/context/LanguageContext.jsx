@@ -4,32 +4,27 @@ import { translations } from '../data/translations';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(localStorage.getItem('heritage_lang') || 'vi');
+  const [lang] = useState('vi');
 
   useEffect(() => {
-    localStorage.setItem('heritage_lang', lang);
-    document.documentElement.lang = lang;
-  }, [lang]);
+    document.documentElement.lang = 'vi';
+  }, []);
 
   const t = (path) => {
     const keys = path.split('.');
-    let result = translations[lang];
+    let result = translations['vi'];
     for (const key of keys) {
-      if (result[key]) {
+      if (result && result[key]) {
         result = result[key];
       } else {
-        return path; // Return path if not found
+        return path;
       }
     }
     return result;
   };
 
-  const toggleLanguage = () => {
-    setLang(prev => (prev === 'en' ? 'vi' : 'en'));
-  };
-
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t, toggleLanguage }}>
+    <LanguageContext.Provider value={{ lang, t }}>
       {children}
     </LanguageContext.Provider>
   );
