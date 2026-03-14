@@ -6,14 +6,14 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-cinematic-gradient">
+    <section className="relative h-screen w-full flex flex-col justify-end pb-32 items-center overflow-hidden bg-cinematic-gradient">
       {/* Background Image with Cinematic Effects */}
       <div 
-        className="absolute inset-0 z-0 scale-110 animate-pulse-slow opacity-60"
+        className="absolute inset-0 z-0 animate-pulse-slow opacity-60"
         style={{
-          backgroundImage: 'url("/assets/hero.png")',
+          backgroundImage: 'url("/assets/hung_kings.png")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
         }}
       >
         <div className="absolute inset-0 bg-noise opacity-30"></div>
