@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const CulturalStory = () => {
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 200]);
@@ -27,25 +29,21 @@ const CulturalStory = () => {
         </div>
 
         <div>
-          <h2 className="text-gold text-sm tracking-[0.4em] uppercase mb-6 italic">Deep Roots</h2>
-          <h3 className="text-6xl font-serif text-white mb-8">Symbols of <br /> Sovereignty</h3>
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
-            <p>
-              The Dong Son drum is more than an ancient musical instrument; it is a repository of the Lac Viet spirit. Its central sunburst pattern represents the source of life and order, surrounded by rows of stylized birds—humanity’s connection to the heavens.
-            </p>
-            <p>
-              By weaving these symbols into modern threads, we aren't just creating clothing. We are continuing a conversation that began four millennia ago. Each shirt is a canvas; each pattern is a story waiting to be told.
-            </p>
+          <h2 className="text-gold text-sm tracking-[0.4em] uppercase mb-6 italic font-bold">{t('cultural.subtitle')}</h2>
+          <h3 className="text-6xl font-serif text-white mb-8 leading-tight">{t('cultural.title')}</h3>
+          <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+            <p>{t('cultural.p1')}</p>
+            <p>{t('cultural.p2')}</p>
           </div>
           
           <div className="mt-12 grid grid-cols-2 gap-8 border-t border-gold/20 pt-12">
             <div>
-              <p className="text-gold font-bold text-lg mb-1 italic">4000+</p>
-              <p className="text-muted-foreground text-xs uppercase tracking-widest">Years of History</p>
+              <p className="text-gold font-bold text-3xl mb-1 italic">{t('cultural.stat1_val')}</p>
+              <p className="text-white/50 text-[10px] uppercase tracking-widest font-bold">{t('cultural.stat1_label')}</p>
             </div>
             <div>
-              <p className="text-gold font-bold text-lg mb-1 italic">Handcrafted</p>
-              <p className="text-muted-foreground text-xs uppercase tracking-widest">Detail Oriented</p>
+              <p className="text-gold font-bold text-3xl mb-1 italic">{t('cultural.stat2_val')}</p>
+              <p className="text-white/50 text-[10px] uppercase tracking-widest font-bold">{t('cultural.stat2_label')}</p>
             </div>
           </div>
         </div>

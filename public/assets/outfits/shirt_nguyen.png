@@ -1,0 +1,16 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Royal Blue/Purple Body -->
+  <path d="M400 120C300 120 220 150 180 180L40 250V450L150 450V950H650V450L760 450V250L620 180C580 150 500 120 400 120Z" fill="#1b1464" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- Nhat Binh Collar (Rectangular) -->
+  <rect x="340" y="120" width="120" height="400" fill="#D4AF37" fill-opacity="0.2" stroke="#D4AF37" stroke-width="3"/>
+  
+  <!-- Decorative Bands on Sleeves -->
+  <rect x="40" y="300" width="110" height="30" fill="#ff0000" fill-opacity="0.5"/>
+  <rect x="40" y="340" width="110" height="30" fill="#00ff00" fill-opacity="0.5"/>
+  <rect x="650" y="300" width="110" height="30" fill="#ff0000" fill-opacity="0.5"/>
+  <rect x="650" y="340" width="110" height="30" fill="#00ff00" fill-opacity="0.5"/>
+  
+  <text x="400" y="650" fill="#D4AF37" font-size="24" text-anchor="middle" font-family="serif" font-weight="bold">TRIỀU NGUYỄN</text>
+  <path d="M360 200Q400 180 440 200" stroke="#D4AF37" stroke-width="2" fill="none"/>
+</svg>

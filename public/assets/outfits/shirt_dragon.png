@@ -1,0 +1,5 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M400 120C320 120 280 140 240 160C180 190 120 230 60 260C40 270 30 290 30 310L80 480C85 500 105 510 125 505L180 490V880C180 910 200 930 230 930H570C600 930 620 910 620 880V490L675 505C695 510 715 500 720 480L770 310C770 290 760 270 740 260C680 230 620 190 560 160C520 140 480 120 400 120Z" fill="#123456" stroke="#D4AF37" stroke-width="2"/>
+  <path d="M350 450Q400 400 450 450T550 450" stroke="#D4AF37" stroke-width="5"/>
+  <text x="400" y="560" fill="#D4AF37" font-size="20" text-anchor="middle" font-family="serif">RỒNG HOÀNG GIA</text>
+</svg>

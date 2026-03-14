@@ -1,0 +1,13 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Jacket Body -->
+  <path d="M400 150C300 150 240 170 200 190L100 240V550L200 550V940H600V550L700 550V240L600 190C560 170 500 150 400 150Z" fill="white" stroke="#D4AF37" stroke-width="4"/>
+  
+  <!-- Shoulder Pads (Cầu vai) -->
+  <path d="M100 240L250 190M700 240L550 190" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- High Collar (Cổ trụ) -->
+  <path d="M340 150V100C340 100 370 90 400 90C430 90 460 100 460 100V150H340Z" fill="#D4AF37" fill-opacity="0.2" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- Front Zipper/Opening -->
+  <path d="M400 150V940" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+</svg>
