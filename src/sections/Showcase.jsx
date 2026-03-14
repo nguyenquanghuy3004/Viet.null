@@ -66,7 +66,7 @@ const Showcase = () => {
                   <div className="relative aspect-[3/4] mb-8 transition-all duration-1000 preserve-3d group-hover:rotate-y-12">
                     <div className="absolute inset-0 overflow-hidden bg-heritage-gray border border-white/5 group-hover:border-gold/40 shadow-2xl rounded-sm">
                       <div
-                        className="absolute inset-0 bg-cover bg-top transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         style={{
                           backgroundImage: `url(${product.id % 2 === 0 ? '/assets/dynasties_collection.png' : '/assets/hero.png'})`,
                         }}

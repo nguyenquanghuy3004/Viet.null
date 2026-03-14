@@ -62,7 +62,7 @@ const Collections = ({ onSelectDynasty }) => {
                 <img
                   src={dynasty.image}
                   alt={dynasty.name}
-                  className="w-full h-full object-cover object-top opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-all duration-[1.5s] ease-out"
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-all duration-[1.5s] ease-out"
                 />
               </div>
 
