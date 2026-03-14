@@ -66,21 +66,15 @@ const Showcase = () => {
                   <div className="relative aspect-[3/4] mb-8 transition-all duration-1000 preserve-3d group-hover:rotate-y-12">
                     <div className="absolute inset-0 overflow-hidden bg-heritage-gray border border-white/5 group-hover:border-gold/40 shadow-2xl rounded-sm">
                       <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
                         style={{
                           backgroundImage: `url(${product.id % 2 === 0 ? '/assets/dynasties_collection.png' : '/assets/hero.png'})`,
                         }}
                       ></div>
-                      <div className="absolute inset-0 bg-heritage-black/40 group-hover:bg-heritage-black/10 transition-all duration-500"></div>
-
-                      {/* 3D Label */}
-                      <div className="absolute top-4 right-4 text-gold/30 group-hover:text-gold transition-colors">
-                        <Rotate3d size={16} />
-                      </div>
-
-                      <div className="absolute bottom-6 left-6 right-6 translate-y-full group-hover:translate-y-0 transition-all duration-700 bg-heritage-black/95 p-8 backdrop-blur-md border border-gold/30 z-20">
-                        <p className="text-gold text-[10px] uppercase tracking-[0.4em] mb-3 font-bold">{t('showcase.story')}</p>
-                        <p className="text-white/90 text-sm leading-relaxed italic">"{product.story}"</p>
+                      {/* Always Visible Story Box */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 bg-heritage-black/80 backdrop-blur-md border-t border-gold/20 z-20">
+                        <p className="text-gold text-[8px] uppercase tracking-[0.4em] mb-2 font-bold">{t('showcase.story')}</p>
+                        <p className="text-white/80 text-[11px] leading-relaxed italic line-clamp-2">"{product.story}"</p>
                       </div>
                     </div>
                   </div>

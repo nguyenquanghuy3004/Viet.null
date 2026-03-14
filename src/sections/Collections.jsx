@@ -62,15 +62,15 @@ const Collections = ({ onSelectDynasty }) => {
                 <img
                   src={dynasty.image}
                   alt={dynasty.name}
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-all duration-[1.5s] ease-out"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[1.5s] ease-out"
                 />
               </div>
 
-              {/* Gradient Overlay */}
+              {/* Gradient Overlay - Subtle bottom fade only for text readability */}
               <div
-                className="absolute inset-0 opacity-70 group-hover:opacity-80 transition-opacity duration-700 z-10"
+                className="absolute inset-0 opacity-40 transition-opacity duration-700 z-10"
                 style={{
-                  background: `linear-gradient(to top, #0a0a0a 0%, #0a0a0a 25%, transparent 100%)`
+                  background: `linear-gradient(to top, #000 0%, transparent 50%)`
                 }}
               ></div>
 

@@ -14,7 +14,7 @@ const About = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <img src="/assets/hero.png" alt="Brand Logo" className="w-24 h-24 mx-auto mb-12 rounded-full border-2 border-gold grayscale" />
+          <img src="/assets/hero.png" alt="Brand Logo" className="w-24 h-24 mx-auto mb-12 rounded-full border-2 border-gold" />
           <h2 className="text-gold text-sm tracking-[0.4em] uppercase mb-8 font-bold">{t('about.subtitle')}</h2>
           <h3 className="text-4xl md:text-5xl font-serif text-white mb-10 leading-relaxed italic">
             {t('about.title')}

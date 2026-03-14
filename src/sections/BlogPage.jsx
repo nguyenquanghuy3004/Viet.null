@@ -50,8 +50,8 @@ const BlogPage = () => {
               className="group cursor-pointer"
             >
               <div className="aspect-video overflow-hidden mb-8 border border-white/5 group-hover:border-gold/30 transition-all relative">
-                <img src={article.image} alt={article.title} className="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-heritage-black/40"></div>
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute inset-0 bg-heritage-black/10"></div>
                 <div className="absolute top-6 left-6 px-4 py-2 bg-gold/10 border border-gold/30 text-gold text-[8px] uppercase font-bold tracking-widest">
                   Văn hóa
                 </div>

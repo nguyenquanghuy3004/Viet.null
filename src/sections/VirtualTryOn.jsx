@@ -102,7 +102,7 @@ const VirtualTryOn = () => {
                     onClick={() => setSelectedOutfit(item)}
                     className={`aspect-square border transition-all ${selectedOutfit?.id === item.id ? 'border-gold bg-gold/5' : 'border-white/5'}`}
                   >
-                    <img src={item.src} alt={item.name} className="w-full h-full object-cover grayscale px-2" />
+                    <img src={item.src} alt={item.name} className="w-full h-full object-cover px-2" />
                   </button>
                 ))}
               </div>
