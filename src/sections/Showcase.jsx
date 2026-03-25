@@ -66,11 +66,19 @@ const Showcase = () => {
                   <div className="relative aspect-[3/4] mb-8 transition-all duration-1000 preserve-3d group-hover:rotate-y-12">
                     <div className="absolute inset-0 overflow-hidden bg-heritage-gray border border-white/5 group-hover:border-gold/40 shadow-2xl rounded-sm">
                       <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                        className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ${product.backImage ? 'group-hover:opacity-0' : 'group-hover:scale-110'}`}
                         style={{
-                          backgroundImage: `url(${product.id % 2 === 0 ? '/assets/dynasties_collection.png' : '/assets/hero.png'})`,
+                          backgroundImage: `url(${product.image})`,
                         }}
                       ></div>
+                      {product.backImage && (
+                        <div
+                          className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110"
+                          style={{
+                            backgroundImage: `url(${product.backImage})`,
+                          }}
+                        ></div>
+                      )}
                       {/* Always Visible Story Box */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 bg-heritage-black/80 backdrop-blur-md border-t border-gold/20 z-20">
                         <p className="text-gold text-[8px] uppercase tracking-[0.4em] mb-2 font-bold">{t('showcase.story')}</p>
@@ -84,7 +92,7 @@ const Showcase = () => {
                       <h4 className="text-2xl font-serif text-white mb-2 group-hover:text-gold transition-colors">{product.name}</h4>
                       <p className="text-gold/50 text-[10px] uppercase tracking-[0.3em] font-bold">{product.collection}</p>
                     </div>
-                    <span className="text-gold font-serif text-lg">{product.price}</span>
+                    {/* <span className="text-gold font-serif text-lg">{product.price}</span> */}
                   </div>
 
                   <button className="mt-8 flex items-center gap-3 text-white/50 text-[10px] uppercase tracking-[0.4em] hover:text-gold hover:gap-6 transition-all group font-black">

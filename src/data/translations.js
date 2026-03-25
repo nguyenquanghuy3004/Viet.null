@@ -2,7 +2,7 @@ export const translations = {
   vi: {
     nav: {
       collections: "Bộ sưu tập",
-      heritage: "Di Sản",
+      heritage: "Viet.Null",
       search: "Tìm kiếm",
       about: "Về chúng tôi",
       blog: "Bản tin",
@@ -67,7 +67,7 @@ export const translations = {
     about: {
       subtitle: "Sứ mệnh của chúng tôi",
       title: "\"Truyền cảm hứng để một thế hệ mặc lên niềm tự hào lịch sử, kết nối khoảng cách giữa tiền nhân và người trẻ.\"",
-      desc: "Heritage ra đời từ một quan sát đơn giản: lịch sử của chúng ta rất đẹp, nhưng nó thường bị bó hẹp trong bảo tàng. Chúng tôi tin rằng văn hóa là sự sống. Bằng cách đưa các họa tiết hoàng gia vào thời trang dạo phố đương đại, chúng tôi biến lịch sử thành thứ có thể mặc được và không thể lãng quên."
+      desc: "Viet.Null ra đời từ một quan sát đơn giản: lịch sử của chúng ta rất đẹp, nhưng nó thường bị bó hẹp trong bảo tàng. Chúng tôi tin rằng văn hóa là sự sống. Bằng cách đưa các họa tiết hoàng gia vào thời trang dạo phố đương đại, chúng tôi biến lịch sử thành thứ có thể mặc được và không thể lãng quên."
     },
     footer: {
       desc: "Giao điểm của văn hóa Việt cổ xưa và thời trang xa xỉ hiện đại. Mặc lên câu chuyện của một dân tộc.",
@@ -75,7 +75,7 @@ export const translations = {
       service: "Dịch vụ",
       privacy: "Chính sách bảo mật",
       terms: "Điều khoản dịch vụ",
-      copyright: "Thương hiệu Thời trang Heritage. Giao thoa Văn hóa Việt.",
+      copyright: "Thương hiệu Thời trang Viet.Null. Giao thoa Văn hóa Việt.",
     },
     map: {
       north: {

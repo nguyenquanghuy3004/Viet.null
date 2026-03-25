@@ -89,7 +89,7 @@ const Timeline = () => {
                 <div className="mb-6 relative">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="text-gold font-serif text-[7rem] md:text-[9rem] italic leading-none inline-block relative"
+                    className="text-gold font-serif text-[7rem] md:text-[9rem] italic leading-tight inline-block relative py-4"
                   >
                     {item.year}
                     <motion.div
@@ -218,7 +218,7 @@ const Timeline = () => {
                         transition={{ delay: 0.4 }}
                         className="flex items-center gap-8 mb-16"
                       >
-                        <span className="text-gold font-serif text-8xl md:text-[11rem] italic leading-none">
+                        <span className="text-gold font-serif text-8xl md:text-[11rem] italic leading-tight pt-8 block">
                           {selectedEvent.year}
                         </span>
                         <div className="grow h-px bg-gradient-to-r from-gold/30 to-transparent" />

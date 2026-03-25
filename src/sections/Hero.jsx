@@ -9,11 +9,11 @@ const Hero = () => {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-cinematic-gradient">
       {/* Background Image with Cinematic Effects */}
       <div 
-        className="absolute inset-0 z-0 scale-105 opacity-80"
+        className="absolute inset-0 z-0 opacity-80"
         style={{
-          backgroundImage: 'url("/assets/hero.png")',
+          backgroundImage: 'url("/assets/products/group_hero.png")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center 20%',
         }}
       >
         <div className="absolute inset-0 bg-noise opacity-10"></div>
@@ -48,11 +48,13 @@ const Hero = () => {
            animate={{ opacity: 1 }}
            transition={{ delay: 1 }}
         >
-          <button 
-            className="px-12 py-5 bg-gold text-heritage-black font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white transition-all duration-500 shadow-2xl"
-          >
-            {t('hero.cta')}
-          </button>
+          <a href="#showcase">
+            <button 
+              className="px-12 py-5 bg-gold text-heritage-black font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white transition-all duration-500 shadow-2xl"
+            >
+              {t('hero.cta')}
+            </button>
+          </a>
         </motion.div>
       </div>
 

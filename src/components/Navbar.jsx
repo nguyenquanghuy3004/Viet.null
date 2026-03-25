@@ -10,7 +10,7 @@ const Navbar = ({ onTryOnClick, onLogoClick }) => {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 w-full z-50 px-8 py-6 grid grid-cols-3 items-center bg-heritage-black/90 backdrop-blur-lg border-b border-gold/10"
+      className="fixed top-0 left-0 w-full z-50 px-8 py-6 grid grid-cols-3 items-center bg-black border-b border-gold/10 shadow-2xl"
     >
       {/* Left Section */}
       <div className="flex items-center gap-6">
@@ -23,13 +23,12 @@ const Navbar = ({ onTryOnClick, onLogoClick }) => {
         </div>
       </div>
 
-      {/* Center Section: Logo */}
       <div className="flex justify-center">
         <button 
           onClick={onLogoClick}
-          className="text-3xl font-serif text-gold tracking-[0.2em] uppercase cursor-pointer hover:text-white transition-colors"
+          className="cursor-pointer hover:scale-110 transition-transform duration-500"
         >
-          {t('nav.heritage')}
+          <img src="/assets/logo.png" alt="Viet.Null Logo" className="h-[110px] w-auto invert grayscale contrast-[1000%] mix-blend-screen" />
         </button>
       </div>
 

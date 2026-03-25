@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-transparent pt-20 pb-10 px-8 border-t border-gold/10 relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
         <div className="col-span-1 md:col-span-2">
-          <h2 className="text-3xl font-serif text-gold tracking-widest uppercase mb-6">{t('nav.heritage')}</h2>
+          <img src="/assets/logo.png" alt="Brand Logo" className="h-[152px] w-auto mx-auto mb-12 invert grayscale contrast-[1000%] mix-blend-screen -ml-10" />
           <p className="text-white/60 max-w-sm mb-8 leading-relaxed">
             {t('footer.desc')}
           </p>
